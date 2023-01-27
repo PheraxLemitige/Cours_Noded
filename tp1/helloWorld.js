@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
 const port = 3000
+let resquestCount = []
 
 app.use('/', (req, res, next) =>{
+    req.
     let date = new Date()
     console.log("[" + date.toISOString() + "]" + req.url)
     next()
