@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const users = require("./users");
 const movies = require("./movies");
-//const watchlists = require("./watchlists");
+const watchlists = require("./watchlists");
 
 app.use(express.json());
 
@@ -12,7 +12,7 @@ const metrics = {
 
 app.use("/users", users);
 app.use("/movies", movies);
-//app.use("/watchlists", watchlists)
+app.use("/watchlists", watchlists)
 
 app.get("/", (req, res, next) => {
   return res.send("Hello World !");
