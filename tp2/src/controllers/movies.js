@@ -12,6 +12,15 @@ async function addMovie(req, res, next) {
       return next(e);
     }
   }
+  async function getMovies(req, res, next) {
+    try {
+      const result = await findOne(collection, res.body);
+      return res.send(result);
+    } catch (e) {
+      console.log(e);
+      return next(e);
+    }
+  } 
 
 module.exports = {
     addMovie
