@@ -43,6 +43,16 @@ async function addWatchlist(req, res, next) {
     }
   }
 
+  async function getWatchList(req, res, next) {
+    try {
+      const result = await findOne(collection, res.body);
+      return res.send(result.listMovies);
+    } catch (e) {
+      console.log(e);
+      return next(e);
+    }
+  }
+
 module.exports = {
     addWatchlist, changeStatue, getWatchListUser
 };
