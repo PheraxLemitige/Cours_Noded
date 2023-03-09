@@ -6,7 +6,7 @@ async function getMovie(title){
     var options = {
       method: 'GET',
       url: 'http://www.omdbapi.com/',
-      params: {s: 'The 100', apikey: apikey}
+      params: {s: title, apikey: apikey}
     };
     const result = await axios.request(options);
     return result.data;
