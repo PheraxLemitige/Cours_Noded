@@ -11,8 +11,7 @@ async function addWatchlist(req, res, next) {
       else{
         watchlist = {
           "user" : user,
-          "listMovies" : [{"statu" : "",
-                      "movie": {}}],
+          "listMovies" : [],
         }
         
       const result = await insertOne(collection, watchlist);
