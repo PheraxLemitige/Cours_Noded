@@ -25,7 +25,11 @@ async function addWatchlist(req, res, next) {
 
   async function changeStatue(req, res, next) {
     try {
-      const result = await insertOne(collection, req.body);
+      const watchlist = await findOne(collection, req.body.user);
+      const movies = await findOne(watchlist, req.body.listMovies);
+      for (let i = 0; i < movies.lenght; i++){
+
+      }
       return res.send(result);
     } catch (e) {
       console.log(e);
