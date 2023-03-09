@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const { addMovie } = require("../controllers/watchlists");
+const { addMovie, getWatchListUser } = require("../controllers/watchlists");
 
 router.post("/create", addMovie);
+router.get("/getWatchlistUser", getWatchListUser)
 
 module.exports = router;
