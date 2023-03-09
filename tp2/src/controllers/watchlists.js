@@ -3,8 +3,21 @@ const collection = "watchlists";
 
 async function addWatchlist(req, res, next) {
     try {
-      const result = await insertOne(collection, req.body);
+      const user = await findOne("users", req.body);
+      if (user){
+        console.log("La watchlist existe deja");
+        return res.send(null);
+      }
+      else{
+        watchlist = {
+          "user" : user,
+          "listMovies" : [{"statu" : "",
+                      "movie": {}}],
+        }
+        
+      const result = await insertOne(collection, watchlist);
       return res.send(result);
+      }
     } catch (e) {
       console.log(e);
       return next(e);
