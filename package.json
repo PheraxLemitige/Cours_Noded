@@ -1,0 +1,22 @@
+{
+  "name": "cours_noded",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PheraxLemitige/Cours_Noded.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PheraxLemitige/Cours_Noded/issues"
+  },
+  "homepage": "https://github.com/PheraxLemitige/Cours_Noded#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
