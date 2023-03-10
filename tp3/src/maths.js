@@ -6,6 +6,7 @@
  */
 function addition(a, b) {
   // implentez la fonction
+    return a + b;
 }
 
 /**
@@ -16,6 +17,7 @@ function addition(a, b) {
  */
 function quotient(a, b) {
   // implentez la fonction
+    return a / b
 }
 
 module.exports = {
