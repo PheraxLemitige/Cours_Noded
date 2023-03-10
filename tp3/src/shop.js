@@ -1,6 +1,6 @@
 const { isString } = require('lodash');
 var _ = require('lodash');
-const product = require("./products.json");
+const product = require("./__mocks__/product.json");
 
 /**
  * @function

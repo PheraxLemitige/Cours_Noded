@@ -5,6 +5,7 @@ const fakeUserLess50Years = require("../__mocks__/userLess50Years.json");
 const fakeProductTypeCategory = require("../__mocks__/fakeProductTypeCategory.json");
 const fakeProductTypeStock = require("../__mocks__/fakeProductTypeStock.json");
 const fakeProductTypeStockNegatif = require("../__mocks__/fakeProductTypeStockNegatif.json");
+const product = require("../__mocks__/product.json");
 
 describe("shop.js", () => {
   describe("getUser", () => {
@@ -75,6 +76,20 @@ describe("shop.js", () => {
   });
 
   describe("getInfoProduit", () => {
+    it ("Doit passer normalement", () => {
+      expect(() => {
+        getInfoProduit(product).toBe({
+          "smartphones": [
+            { "libelle": 'iPhone 9', "dispo": 'high' },
+            { "libelle": 'iPhone X', "dispo": 'high' },
+            { "libelle": 'Samsung Universe 9', "dispo": 'high' },
+            { "libelle": 'OPPOF19', "dispo": 'high' },
+            { "libelle": 'Huawei P30', "dispo": 'high' }
+          ],
+          "laptops": [ { "libelle": 'MacBook Pro', "dispo": 'high' } ]
+        })
+      });
+    });
     it("Doit throw une erreur car la liste des produit est du mauvais type", () => {
       expect(() => {
         getInfoProduit("liste");
